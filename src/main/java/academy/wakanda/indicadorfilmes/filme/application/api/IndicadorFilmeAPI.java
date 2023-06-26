@@ -1,10 +1,8 @@
-package academy.wakanda.indicadorfilmes.filme.api;
+package academy.wakanda.indicadorfilmes.filme.application.api;
 
-import academy.wakanda.indicadorfilmes.filme.api.FilmeResponse;
-import academy.wakanda.indicadorfilmes.filme.service.IndicadorFilmesService;
-import academy.wakanda.indicadorfilmes.filme.service.LocalizacaoDTO;
+import academy.wakanda.indicadorfilmes.filme.application.service.IndicadorFilmesService;
+import academy.wakanda.indicadorfilmes.filme.application.service.LocalizacaoDTO;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,16 +16,17 @@ import java.util.List;
 @RequestMapping("/indicadorfilme")
 @Log4j2
 public class IndicadorFilmeAPI {
-
     private final IndicadorFilmesService indicadorFilmesService;
+
     @GetMapping
-    public List<FilmeResponse> indicaFilmes(@RequestParam String longitude, @RequestParam String latitude){
+    public List<FilmeResponse> indicaFilmes(@RequestParam String longitude, @RequestParam String latitude) {
         log.info("[start] IndicadorFilmesAPI - indicaFilmes");
+        log.info("[longitude] {} - [latitude] {}", longitude, latitude);
         var localizacao = LocalizacaoDTO.builder()
-                .latitude(latitude)
                 .longitude(longitude)
+                .latitude(latitude)
                 .build();
-        var filmes = indicadorFilmesService.buscaIndicacaoFilmes(localizacao);
+        var filmes = indicadorFilmesService.buscaIndicacoesFilmes(localizacao);
         log.info("[finish] IndicadorFilmesAPI - indicaFilmes");
         return filmes;
     }
