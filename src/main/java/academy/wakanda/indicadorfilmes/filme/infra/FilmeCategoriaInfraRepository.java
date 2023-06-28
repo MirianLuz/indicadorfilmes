@@ -16,10 +16,10 @@ public class FilmeCategoriaInfraRepository implements FilmeCategoriaRepository {
     private final FilmeCategoriaSpringDataJPARepository dataJPARepository;
 
     @Override
-    public Optional<FilmeCategoria> buscaAtravesTemperatura(Double temperatura) {
+    public FilmeCategoria buscaAtravesTemperatura(Double temperatura) {
         log.info("[start] FilmeCategoriaInfraRepository - buscaAtravesTemperatura");
         List<FilmeCategoria> categorias = dataJPARepository.findByTemperaturaMinimaLessThanEqualAndTemperaturaMaximaGreaterThanEqual(temperatura, temperatura);
         log.info("[finish] FilmeCategoriaInfraRepository - buscaAtravesTemperatura");
-        return categorias.stream().findFirst();
+        return categorias.stream().findFirst().orElseThrow(() -> new RuntimeException("Categoria Não Encontrada"));
     }
 }
