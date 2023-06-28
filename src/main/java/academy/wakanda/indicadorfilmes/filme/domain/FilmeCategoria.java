@@ -1,6 +1,5 @@
 package academy.wakanda.indicadorfilmes.filme.domain;
 
-import academy.wakanda.indicadorfilmes.filme.application.service.FilmeCategoriaEnum;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

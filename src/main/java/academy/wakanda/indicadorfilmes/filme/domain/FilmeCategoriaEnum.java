@@ -1,4 +1,4 @@
-package academy.wakanda.indicadorfilmes.filme.application.service;
+package academy.wakanda.indicadorfilmes.filme.domain;
 
 public enum FilmeCategoriaEnum {
     ACAO,

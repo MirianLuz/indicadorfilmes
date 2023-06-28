@@ -1,6 +1,7 @@
 package academy.wakanda.indicadorfilmes.filme.application.service;
 
 import academy.wakanda.indicadorfilmes.filme.application.api.FilmeResponse;
+import academy.wakanda.indicadorfilmes.filme.application.api.LocalizacaoDTO;
 import academy.wakanda.indicadorfilmes.filme.domain.FilmeCategoria;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;

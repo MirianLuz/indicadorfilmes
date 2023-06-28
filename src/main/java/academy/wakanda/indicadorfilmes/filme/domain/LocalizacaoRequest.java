@@ -1,4 +1,4 @@
-package academy.wakanda.indicadorfilmes.filme.application.api;
+package academy.wakanda.indicadorfilmes.filme.domain;
 
 import lombok.AccessLevel;
 import lombok.Getter;

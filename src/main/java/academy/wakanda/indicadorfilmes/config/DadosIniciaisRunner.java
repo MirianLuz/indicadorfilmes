@@ -1,6 +1,6 @@
 package academy.wakanda.indicadorfilmes.config;
 
-import academy.wakanda.indicadorfilmes.filme.application.service.FilmeCategoriaEnum;
+import academy.wakanda.indicadorfilmes.filme.domain.FilmeCategoriaEnum;
 import academy.wakanda.indicadorfilmes.filme.domain.FilmeCategoria;
 import academy.wakanda.indicadorfilmes.filme.infra.FilmeCategoriaSpringDataJPARepository;
 import lombok.RequiredArgsConstructor;
